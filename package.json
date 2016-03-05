@@ -3,10 +3,10 @@
   "private": true,
   "scripts": {
     "build": "npm-run-all --parallel build:*",
-    "build:css": "node-sass src/style.scss dest/style.css $(find node_modules -type d | awk '{ printf \"--include-path \"$0\" \" }')",
+    "build:css": "node-sass src/style.scss dest/style.css --include-path node_modules",
     "build:html": "jade src/index.jade -o dest",
     "build:js": "browserify src/main.js -o dest/bundle.js",
-    "start": "node server.js"
+    "start": "static dest"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
